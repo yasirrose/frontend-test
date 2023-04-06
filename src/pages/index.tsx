@@ -3,11 +3,67 @@ import { Fragment, useState } from "react";
 import { Accordion, AccordionHeader, AccordionBody, } from "@material-tailwind/react";
 import { useEffect } from "react";
 import { Navbar, MobileNav, Typography, Button, IconButton, } from "@material-tailwind/react";
-
+ 
 
 export default function Home() {
-  const [open, setOpen] = useState(1);
 
+  const [isActive1, setIsActive] = useState(false);
+  const handleClick1 = () => {
+    setIsActive(current => !current);
+    setIsActive2(false);
+    setIsActive3(false);
+    setIsActive4(false);
+    setIsActive5(false);
+    setIsActive6(false);
+  };
+  const [isActive2, setIsActive2] = useState(false);
+  const handleClick2 = () => {
+    setIsActive2(current => !current);
+    setIsActive(false);
+    setIsActive3(false);
+    setIsActive4(false);
+    setIsActive5(false);
+    setIsActive6(false);
+  };
+  const [isActive3, setIsActive3] = useState(false);
+  const handleClick3 = () => {
+    setIsActive3(current => !current);
+    setIsActive(false);
+    setIsActive2(false);
+    setIsActive4(false);
+    setIsActive5(false);
+    setIsActive6(false);
+  };
+  const [isActive4, setIsActive4] = useState(false);
+  const handleClick4 = () => {
+    setIsActive4(current => !current);
+    setIsActive(false);
+    setIsActive2(false);
+    setIsActive3(false);
+    setIsActive5(false);
+    setIsActive6(false);
+  };
+  const [isActive5, setIsActive5] = useState(false);
+  const handleClick5 = () => {
+    setIsActive5(current => !current);
+    setIsActive(false);
+    setIsActive2(false);
+    setIsActive3(false);
+    setIsActive4(false);
+    setIsActive6(false); 
+  };
+  const [isActive6, setIsActive6] = useState(false);
+  const handleClick6 = () => {
+    setIsActive6(current => !current);
+    setIsActive(false);
+    setIsActive2(false);
+    setIsActive3(false);
+    setIsActive4(false);
+    setIsActive5(false);
+  };
+
+
+  const [open, setOpen] = useState(0);
   const handleOpen = (value: React.SetStateAction<number>) => {
     setOpen(open === value ? 0 : value);
   };
@@ -62,6 +118,16 @@ export default function Home() {
         faq
         </a>
       </Typography>
+      <Typography
+        as="li"
+        variant="small"
+        color="text-cLight"
+        className="p-1 font-normal"
+      >
+        <a href="#" className="flex items-center text-white text-lg font-bold text-text-cLight">
+        Pratform <span className="w-auto ml-auto">Coming Soon </span>
+        </a>
+      </Typography>
     </ul>
   );
   return (
@@ -83,7 +149,8 @@ export default function Home() {
               variant="small"
               className="mr-4 cursor-pointer py-1.5 font-normal"
             >
-              <img src="images/logo.png" alt="logo.png" />
+              <img src="images/logo.png" className="hidden sm:block" alt="logo.png" />
+              <img src="images/m_logo.png" className="block sm:hidden" alt="logo.png" />
             </Typography>
             {/* <div className="hidden lg:block">{navList}</div> */}
             <div className="text-right font-sans hidden lg:inline-block">
@@ -143,7 +210,7 @@ export default function Home() {
           <div className="grid gap-x-8 gap-y-8 lg:grid-cols-3 pt-16">
             <div className="">
               <h4 className="font-sans font-normal text-white uppercase text-2xl">Co-Nodes</h4>
-              <p className="font-roboto font-normal text-white text-base md:text-lg uppercase pt-2">
+              <p className="font-sans font-normal text-white text-base md:text-lg uppercase pt-2">
                 Collaborative staking among users to pool to achieve threshold stake and operate
                 collectively. This democratises participation and allows sub-stake holders to benefit
                 from reward protocols. It also enables compounding as participants can sweep earned
@@ -224,7 +291,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="relative flex overflow-x-hidden bg-hero-pattern">
+      <div className="relative flex overflow-x-hidden bg-hero-pattern z-20">
         <div className="pt-3 pb-3 animate-marquee whitespace-nowrap">
           <span className="mx-16 text-base font-bold">Marquee Item 1</span>
           <span className="mx-16 text-base font-bold">Marquee Item 2</span>
@@ -297,8 +364,8 @@ export default function Home() {
           <div className="FaqWrap pt-44">
             <h2 className="uppercase text-4xl lg:text-9xl text-white font-bold 2xl:whitespace-nowrap pb-16">Frequently Asked</h2>
             <Fragment>
-              <Accordion className="pb-6" open={open === 1}>
-                <AccordionHeader className="font-sans text-white hover:text-white text-left text-xl md:text-3xl font-medium uppercase border-0" onClick={() => handleOpen(1)}>
+              <Accordion open={open === 1} className={isActive1 ? 'bg-salmon' : "pb-6"} onClick={handleClick1}>
+                <AccordionHeader className="after:content-[''] after:block after:text-black  after:absolute after:h-full after:-z-10 relative z-10 font-sans text-white hover:text-white text-left active:bg-current  text-xl md:text-3xl font-medium uppercase border-0" onClick={() => handleOpen(1)}>
                   What is Node Army?
                 </AccordionHeader>
                 <AccordionBody>
@@ -309,8 +376,8 @@ export default function Home() {
                   </p>
                 </AccordionBody>
               </Accordion>
-              <Accordion className="pb-6" open={open === 2}>
-                <AccordionHeader className="font-sans text-white hover:text-white text-left  text-xl md:text-3xl font-medium uppercase border-0" onClick={() => handleOpen(2)}>
+              <Accordion className={isActive2 ? 'bg-salmon2' : "pb-6"} onClick={handleClick2} open={open === 2}>
+                <AccordionHeader className="after:content-[''] after:block after:text-black  after:absolute after:h-full after:-z-10 relative z-10 font-sans text-white hover:text-white text-left active:bg-current  text-xl md:text-3xl font-medium uppercase border-0" onClick={() => handleOpen(2)}>
                   How can I benefit from using Node Army?
                 </AccordionHeader>
                 <AccordionBody>
@@ -321,8 +388,8 @@ export default function Home() {
                   </p>
                 </AccordionBody>
               </Accordion>
-              <Accordion className="pb-6" open={open === 3}>
-                <AccordionHeader className="font-sans text-white hover:text-white text-left  text-xl md:text-3xl font-medium uppercase border-0" onClick={() => handleOpen(3)}>
+              <Accordion className={isActive3 ? 'bg-salmon3' : "pb-6"} onClick={handleClick3} open={open === 3}>
+                <AccordionHeader className="after:content-[''] after:block after:text-black  after:absolute after:h-full after:-z-10 relative z-10 font-sans text-white hover:text-white text-left active:bg-current  text-xl md:text-3xl font-medium uppercase border-0" onClick={() => handleOpen(3)}>
                   Do I need technical expertise to use Node Army?
                 </AccordionHeader>
                 <AccordionBody>
@@ -333,8 +400,8 @@ export default function Home() {
                   </p>
                 </AccordionBody>
               </Accordion>
-              <Accordion className="pb-6" open={open === 4}>
-                <AccordionHeader className="font-sans text-white hover:text-white text-left  text-xl md:text-3xl font-medium uppercase border-0" onClick={() => handleOpen(4)}>
+              <Accordion className={isActive4 ? 'bg-salmon4' : "pb-6"} onClick={handleClick4} open={open === 4}>
+                <AccordionHeader className="after:content-[''] after:block after:text-black  after:absolute after:h-full after:-z-10 relative z-10 font-sans text-white hover:text-white text-left active:bg-current  text-xl md:text-3xl font-medium uppercase border-0" onClick={() => handleOpen(4)}>
                   What kind of support does Node Army provide?
                 </AccordionHeader>
                 <AccordionBody>
@@ -345,8 +412,8 @@ export default function Home() {
                   </p>
                 </AccordionBody>
               </Accordion>
-              <Accordion className="pb-6" open={open === 5}>
-                <AccordionHeader className="font-sans text-white hover:text-white text-left  text-xl md:text-3xl font-medium uppercase border-0" onClick={() => handleOpen(5)}>
+              <Accordion className={isActive5 ? 'bg-salmon5' : "pb-6"} onClick={handleClick5} open={open === 5}>
+                <AccordionHeader className="after:content-[''] after:block after:text-black  after:absolute after:h-full after:-z-10 relative z-10 font-sans text-white hover:text-white text-left active:bg-current  text-xl md:text-3xl font-medium uppercase border-0" onClick={() => handleOpen(5)}>
                   How do I get started with Node Army?
                 </AccordionHeader>
                 <AccordionBody>
@@ -357,8 +424,8 @@ export default function Home() {
                   </p>
                 </AccordionBody>
               </Accordion>
-              <Accordion className="pb-6" open={open === 6}>
-                <AccordionHeader className="font-sans text-white hover:text-white text-left active:bg-current  text-xl md:text-3xl font-medium uppercase border-0" onClick={() => handleOpen(6)}>
+              <Accordion className={isActive6 ? 'bg-salmon6' : "pb-6"} onClick={handleClick6} open={open === 6}>
+                <AccordionHeader  className="after:content-[''] after:block after:text-black after:absolute after:h-full after:-z-10 relative z-10 font-sans text-white hover:text-white text-left active:bg-current  text-xl md:text-3xl font-medium uppercase border-0" onClick={() => handleOpen(6)}>
                   How will I be rewarded by using Node Army?
                 </AccordionHeader>
                 <AccordionBody>

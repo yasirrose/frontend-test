@@ -15,12 +15,13 @@ module.exports = withMT({
     extend: {
       colors: {
         'regal-blue': '#0E0E0E',
+        'text-cLight': '#ffffff66',
       }, 
       backgroundImage: {
         'hero-pattern': "url('/images/Banner.jpg')", 
       },
       fontFamily: { 
-        'roboto': ['Roboto', 'sans-serif'],
+        'sans': ['Roboto Mono', 'monospace'],
       },
       animation: {
         marquee: 'marquee 25s linear infinite',
