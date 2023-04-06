@@ -125,7 +125,7 @@ export default function Home() {
         className="p-1 font-normal"
       >
         <a href="#" className="flex items-center text-white text-lg font-bold text-text-cLight">
-        Pratform <span className="w-auto ml-auto">Coming Soon </span>
+        <span className="text-text-cLight"> Pratform </span>  <span className="w-auto ml-auto text-text-cLight">Coming Soon </span>
         </a>
       </Typography>
     </ul>
