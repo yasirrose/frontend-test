@@ -132,6 +132,7 @@ export default function Home() {
   );
   return (
     <>
+    <section className="overflow-hidden mx-auto main-wrap">
       <header className="px-3 md:px-9 bg-black">
         {/* <div className="flex items-center">
         <div className="flex-1 w-50">
@@ -441,7 +442,7 @@ export default function Home() {
         </div>
       </div>
 
-
+      </section>
     </>
   );
 }

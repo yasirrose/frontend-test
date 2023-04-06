@@ -3,7 +3,9 @@
 @tailwind utilities;
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;300;400;500;700&family=Roboto:wght@100;300&display=swap');
-
+.main-wrap {
+  max-width: 1920px;
+}
 .FaqWrap .bg-salmon button,
 .FaqWrap .bg-salmon1 button,
 .FaqWrap .bg-salmon2 button,
@@ -21,7 +23,7 @@
 .FaqWrap .bg-salmon5 button::after,
 .FaqWrap .bg-salmon6 button::after { 
   background: linear-gradient(107.99deg, #FFCC97 -6.66%, #D5D9C5 94.52%); 
-  width: 100vw;
+  width: 200vw;
   left: -16.1vw;
 }
 @media (max-width: 767px) {
