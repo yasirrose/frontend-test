@@ -6,6 +6,7 @@
 .main-wrap {
   max-width: 1920px;
 }
+
 .FaqWrap .bg-salmon button,
 .FaqWrap .bg-salmon1 button,
 .FaqWrap .bg-salmon2 button,
@@ -21,6 +22,7 @@
 .FaqWrap .bg-salmon3 button::after,
 .FaqWrap .bg-salmon4 button::after,
 .FaqWrap .bg-salmon5 button::after,
+
 .FaqWrap .bg-salmon6 button::after { 
   background: linear-gradient(107.99deg, #FFCC97 -6.66%, #D5D9C5 94.52%); 
   width: 200vw;
@@ -28,14 +30,14 @@
 }
 @media (max-width: 767px) {
   .FaqWrap .bg-salmon button::after,
-.FaqWrap .bg-salmon1 button::after,
-.FaqWrap .bg-salmon2 button::after,
-.FaqWrap .bg-salmon3 button::after,
-.FaqWrap .bg-salmon4 button::after,
-.FaqWrap .bg-salmon5 button::after,
-.FaqWrap .bg-salmon6 button::after { 
-  background: linear-gradient(107.99deg, #FFCC97 -6.66%, #D5D9C5 94.52%); 
-  width: 100%;
-  left: 0px;
-}
+  .FaqWrap .bg-salmon1 button::after,
+  .FaqWrap .bg-salmon2 button::after,
+  .FaqWrap .bg-salmon3 button::after,
+  .FaqWrap .bg-salmon4 button::after,
+  .FaqWrap .bg-salmon5 button::after,
+  .FaqWrap .bg-salmon6 button::after {
+    background: linear-gradient(107.99deg, #ffcc97 -6.66%, #d5d9c5 94.52%);
+    width: 100%;
+    left: 0px;
+  }
 }
